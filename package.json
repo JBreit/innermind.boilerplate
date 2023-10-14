@@ -1,0 +1,19 @@
+{
+  "name": "project.boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/main.ts",
+  "scripts": {
+    "test": "npx jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JBreit/innermind.boilerplate.git"
+  },
+  "author": "Jason Breitigan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JBreit/innermind.boilerplate/issues"
+  },
+  "homepage": "https://github.com/JBreit/innermind.boilerplate#readme"
+}
