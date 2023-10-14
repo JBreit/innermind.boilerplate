@@ -15,7 +15,6 @@ module.exports = {
     'plugin:@typescript-eslint/recommended-type-checked',
     'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:jsx-a11y/recommended',
-    // 'plugin:prettier/recommended',
   ],
   overrides: [
     {
@@ -35,14 +34,15 @@ module.exports = {
     },
     ecmaVersion: 2022,
     emitDecoratorMetadata: true,
-    project: [resolve(__dirname, 'tsconfig.eslint.json')],
+    project: [
+      resolve(__dirname, 'tsconfig.eslint.json'),
+    ],
     tsconfigRootDir: __dirname,
     warnOnUnsupportedTypeScriptVersion: true,
   },
   plugins: [
     '@typescript-eslint',
     'jsx-a11y',
-    // 'prettier',
   ],
   root: true,
   rules: {
@@ -141,7 +141,6 @@ module.exports = {
         args: 'none',
       },
     ],
-    // 'prettier/prettier': [err],
     'react/jsx-curly-spacing': [2, always],
     'react/prefer-stateless-function': [0],
     'react/jsx-filename-extension': [
