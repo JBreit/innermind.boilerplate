@@ -158,7 +158,8 @@ module.exports = {
     ],
     semi: [err, always],
     '@typescript-eslint/comma-dangle': [
-      'error', {
+      err,
+      {
         arrays: multiline,
         generics: always,
         enums: always,
