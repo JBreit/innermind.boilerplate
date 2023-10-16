@@ -107,7 +107,7 @@ module.exports = api => {
           useSpread: false
         }
       ],
-      '@babel/preset-typescript',
+      ['@babel/preset-typescript'],
     ]
   };
 };
