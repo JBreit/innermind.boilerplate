@@ -50,8 +50,9 @@ jspm_packages/
 # Optional directories
 .github/
 .lighthouseci/
-certs/
+certs/*
 records/
+temp/*
 
 packages/**/dist/*
 
@@ -163,7 +164,7 @@ Thumbs.db
 *.zip
 
 # Editor directories and files
-.vscode/
+.vscode/*
 !.vscode/extensions.json
 .idea
 *.suo
