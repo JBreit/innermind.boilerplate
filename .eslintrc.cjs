@@ -183,6 +183,6 @@ module.exports = {
           resolve(`${process.cwd()}/node_modules`),
         ],
       },
-    }
-  }
-}
+    },
+  },
+};
