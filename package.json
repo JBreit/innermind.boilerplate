@@ -16,7 +16,7 @@
     "preversion": "npm run test",
     "start": "ts-node ./src/main.ts",
     "start:dev": "npx nodemon",
-    "test": "npx jest",
+    "test": "npx jest --coverage",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "repository": {
