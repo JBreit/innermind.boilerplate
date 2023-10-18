@@ -1,3 +1,5 @@
+import type { Config } from 'jest';
+
 const extensions = [
   'ts',
   'tsx',
@@ -11,7 +13,7 @@ const extensions = [
   'node',
 ];
 
-module.exports = () => ({
+export default (): Config => ({
   coverageDirectory: './coverage',
   moduleFileExtensions: extensions,
   preset: 'ts-jest',
@@ -20,13 +22,13 @@ module.exports = () => ({
   ],
   testEnvironment: 'node',
   testRegex: [
-    '.\/(src)\/.*\\.(spec|test)?\\.(ts|tsx)$',
+    './(src)/.*\\.(spec|test)?\\.(ts|tsx)$',
   ],
   transform: {
-    '^.+\\.(ts|tsx)?$': ['ts-jest'],
+    '^.+\\.(ts|tsx)?$': 'ts-jest',
   },
   transformIgnorePatterns: [
-    '^\/node_modules\/$'
+    '^/node_modules/$',
   ],
   verbose: true,
 });
