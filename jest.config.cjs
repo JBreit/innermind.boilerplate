@@ -14,6 +14,7 @@ const extensions = [
 module.exports = () => ({
   coverageDirectory: './coverage',
   moduleFileExtensions: extensions,
+  preset: 'ts-jest',
   roots: [
     '<rootDir>/src',
   ],
