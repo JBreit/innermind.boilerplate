@@ -14,6 +14,7 @@ const extensions = [
 ];
 
 export default (): Config => ({
+  automock: true,
   coverageDirectory: './coverage',
   moduleFileExtensions: extensions,
   preset: 'ts-jest',
