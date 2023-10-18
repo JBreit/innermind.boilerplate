@@ -16,7 +16,9 @@
     "preversion": "npm run test",
     "start": "ts-node ./src/main.ts",
     "start:dev": "npx nodemon",
-    "test": "npx jest --coverage",
+    "test": "npx jest --verbose",
+    "test:coverage": "rimraf ./coverage && npx jest --verbose --coverage",
+    "test:watch": "jest --verbose --watchAll -i",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "repository": {
