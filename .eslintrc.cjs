@@ -171,7 +171,14 @@ module.exports = {
       },
     ],
     '@typescript-eslint/indent': 'off',
-    '@typescript-eslint/no-unused-vars': 'warn',
+    // '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        varsIgnorePattern: '^_',
+        argsIgnorePattern: '^_',
+      },
+    ],
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     quotes: [2, 'single'],
   },
