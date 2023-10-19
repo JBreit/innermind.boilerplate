@@ -6,6 +6,7 @@ const multiline = 'always-multiline';
 const always = 'always';
 const never = 'never';
 const err = 'error';
+const off = 'off';
 
 module.exports = {
   extends: [
@@ -157,7 +158,7 @@ module.exports = {
       },
     ],
     semi: [err, always],
-    '@typescript-eslint/ban-types': 'off',
+    '@typescript-eslint/ban-types': off,
     '@typescript-eslint/comma-dangle': [
       'error', {
         arrays: multiline,
@@ -170,16 +171,18 @@ module.exports = {
         tuples: always,
       },
     ],
-    '@typescript-eslint/indent': 'off',
+    '@typescript-eslint/indent': off,
     // '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
-        varsIgnorePattern: '^_',
-        argsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '(^reject$|^_$)',
+        vars: 'all',
+        varsIgnorePattern: '(^_$|^h$)',
       },
     ],
-    '@typescript-eslint/prefer-nullish-coalescing': 'off',
+    '@typescript-eslint/prefer-nullish-coalescing': off,
     quotes: [2, 'single'],
   },
   settings: {
