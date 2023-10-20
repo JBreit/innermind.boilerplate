@@ -17,6 +17,20 @@ module.exports = {
     'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:jsx-a11y/recommended',
   ],
+  env: {
+    browser: true,
+    jest: true,
+    node: true,
+    serviceWorker: true,
+  },
+  globals: {
+    describe: true,
+    document: true,
+    expect: true,
+    self: true,
+    test: true,
+    window: true,
+  },
   overrides: [
     {
       extends: [
