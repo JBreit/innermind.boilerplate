@@ -174,7 +174,8 @@ module.exports = {
     semi: [err, always],
     '@typescript-eslint/ban-types': off,
     '@typescript-eslint/comma-dangle': [
-      'error', {
+      err,
+      {
         arrays: multiline,
         generics: always,
         enums: always,
