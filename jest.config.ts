@@ -16,11 +16,6 @@ const extensions = [
 export default (): Config => ({
   automock: true,
   coverageDirectory: './coverage',
-  globals: {
-    'ts-jest': {
-      tsconfig: 'tsconfig.test.json',
-    },
-  },
   moduleFileExtensions: extensions,
   preset: 'ts-jest',
   roots: [
@@ -29,9 +24,14 @@ export default (): Config => ({
   testEnvironment: 'node',
   testRegex: [
     './(src)/.*\\.(spec|test)?\\.(ts|tsx)$',
+    './(tests)/.*\\.(spec|test)?\\.(ts|tsx)$',
   ],
   transform: {
-    '^.+\\.(ts|tsx)?$': 'ts-jest',
+    '^.+\\.(ts|tsx)?$': [
+      'ts-jest', {
+        tsconfig: 'tsconfig.test.json',
+      },
+    ],
   },
   transformIgnorePatterns: [
     '^/node_modules/$',
