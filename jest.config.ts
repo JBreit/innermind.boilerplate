@@ -1,6 +1,6 @@
 import type { Config } from 'jest';
 
-const extensions = [
+const extensions: string[] = [
   'ts',
   'tsx',
   'js',
