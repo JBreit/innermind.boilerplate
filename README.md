@@ -4,9 +4,7 @@
 
 ## Overview
 
-ECMAScript 2022 syntax based web development project built for personal usage.
-This is a complete and extended rewrite of a previously configured Webpack
-Boilerplate do to upgrading to Webpack 5.
+ECMAScript 2022 syntax based web development project.
 
 ## Dependencies
 
