@@ -1,6 +1,19 @@
 module.exports = api => {
   const isProduction = api.cache(() => process.env.NODE_ENV === 'production');
 
+  const extensions = [
+    'ts',
+    'tsx',
+    'js',
+    'jsx',
+    'json',
+    'cjs',
+    'cts',
+    'mjs',
+    'mts',
+    'node',
+  ];
+
   const plugins = [
     ['@babel/proposal-pipeline-operator', {
       proposal: 'hack',
@@ -11,7 +24,7 @@ module.exports = api => {
     }],
     '@babel/proposal-duplicate-named-capturing-groups-regex',
     ['@babel/proposal-record-and-tuple', {
-      syntaxType: 'hash',
+      importPolyfill: true,
     }],
     '@babel/proposal-throw-expressions',
     '@babel/proposal-async-do-expressions',
@@ -50,12 +63,7 @@ module.exports = api => {
         '@shared': './src/shared',
         '@src': './src',
       },
-      extensions: [
-        '.js',
-        '.jsx',
-        '.ts',
-        '.tsx',
-      ],
+      extensions,
       projectRoot: '.',
     }],
   ];
@@ -66,13 +74,20 @@ module.exports = api => {
       enumerableModuleMeta: false,
       iterableIsArray: true,
       mutableTemplateObject: false,
-      noClassCalls: true,
+      noClassCalls: false,
       noDocumentAll: true,
+      noNewArrows: true,
       noIncompleteNsImportDetection: true,
-      setPublicClassFields: true,
-      setSpreadProperties: false,
-      skipForOfIteratorClosing: true,
+      objectRestNoSymbols: false,
       privateFieldsAsProperties: true,
+      privateFieldsAsSymbols: true,
+      pureGetters: true,
+      setClassMethods: true,
+      setComputedProperties: true,
+      setPublicClassFields: true,
+      setSpreadProperties: true,
+      skipForOfIteratorClosing: false,
+      superIsCallableConstructor: false,
     },
     env: {
       test: {
