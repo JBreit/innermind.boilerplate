@@ -2,6 +2,10 @@
   "name": "innermind.boilerplate",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "npm": ">=8.19.2",
+    "node": ">=20.6.1"
+  },
   "main": "./src/main.ts",
   "scripts": {
     "build:babel": "npx babel --config-file ./babel.config.cjs --extensions \".ts\" ./src/main.ts -d ./dist",
