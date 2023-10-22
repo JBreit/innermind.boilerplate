@@ -23,12 +23,12 @@ export default (): Config => ({
   ],
   testEnvironment: 'node',
   testRegex: [
-    './(src)/.*\\.(spec|test)?\\.(ts|tsx)$',
-    './(tests)/.*\\.(spec|test)?\\.(ts|tsx)$',
+    './(src|tests)/.*\\.(spec|test)?\\.(ts|tsx)$',
   ],
   transform: {
     '^.+\\.(ts|tsx)?$': [
-      'ts-jest', {
+      'ts-jest',
+      {
         tsconfig: 'tsconfig.test.json',
       },
     ],
