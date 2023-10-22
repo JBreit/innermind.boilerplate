@@ -11,6 +11,16 @@ ECMAScript 2022 syntax based web development project.
 - Node.js >=20.6.1
 - NPM >=10.2.1
 
+Previous generated from cz-git .czrc
+
+```json
+
+{
+  "path": "cz-git",
+  "$schema": "https://cdn.jsdelivr.net/gh/Zhengqbbb/cz-git@1.7.1/docs/public/schema/cz-git.json"
+}
+```
+
 ### License
 
 MIT License
