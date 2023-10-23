@@ -21,7 +21,7 @@ module.exports = {
     browser: true,
     jest: true,
     node: true,
-    serviceWorker: true,
+    serviceworker: true,
   },
   globals: {
     describe: true,
