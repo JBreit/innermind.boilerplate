@@ -15,17 +15,26 @@ module.exports = api => {
   ];
 
   const plugins = [
-    ['@babel/proposal-pipeline-operator', {
-      proposal: 'hack',
-      topicToken: '^^',
-    }],
-    ['@babel/proposal-decorators', {
-      version: '2023-05',
-    }],
+    [
+      '@babel/proposal-pipeline-operator',
+      {
+        proposal: 'hack',
+        topicToken: '^^',
+      },
+    ],
+    [
+      '@babel/proposal-decorators',
+      {
+        version: '2023-05',
+      },
+    ],
     '@babel/proposal-duplicate-named-capturing-groups-regex',
-    ['@babel/proposal-record-and-tuple', {
-      importPolyfill: true,
-    }],
+    [
+      '@babel/proposal-record-and-tuple',
+      {
+        importPolyfill: true,
+      },
+    ],
     '@babel/proposal-throw-expressions',
     '@babel/proposal-async-do-expressions',
     '@babel/proposal-destructuring-private',
@@ -48,24 +57,30 @@ module.exports = api => {
     '@babel/syntax-import-meta',
     '@babel/proposal-partial-application',
     '@babel/transform-template-literals',
-    ['@babel/transform-async-to-generator', {
-      module: 'bluebird',
-      method: 'coroutine',
-    }],
-    '@babel/transform-modules-commonjs',
-    ['module-resolver', {
-      root: [__dirname],
-      alias: {
-        '@root': '.',
-        '@config': './src/config',
-        '@container': './src/shared/container/container.js',
-        '@modules': './src/modules',
-        '@shared': './src/shared',
-        '@src': './src',
+    [
+      '@babel/transform-async-to-generator',
+      {
+        module: 'bluebird',
+        method: 'coroutine',
       },
-      extensions,
-      projectRoot: '.',
-    }],
+    ],
+    '@babel/transform-modules-commonjs',
+    [
+      'module-resolver',
+      {
+        root: [__dirname],
+        alias: {
+          '@root': '.',
+          '@config': './src/config',
+          '@container': './src/shared/container/container.js',
+          '@modules': './src/modules',
+          '@shared': './src/shared',
+          '@src': './src',
+        },
+        extensions,
+        projectRoot: '.',
+      },
+    ],
   ];
 
   return {
@@ -80,7 +95,7 @@ module.exports = api => {
       noIncompleteNsImportDetection: true,
       objectRestNoSymbols: false,
       privateFieldsAsProperties: true,
-      privateFieldsAsSymbols: true,
+      privateFieldsAsSymbols: false,
       pureGetters: true,
       setClassMethods: true,
       setComputedProperties: true,
@@ -91,8 +106,10 @@ module.exports = api => {
     },
     env: {
       test: {
-        plugins: []
-      }
+        plugins: [
+
+        ],
+      },
     },
     plugins,
     presets: [
@@ -101,17 +118,17 @@ module.exports = api => {
         {
           corejs: {
             version: '^3.32',
-            proposals: true
+            proposals: true,
           },
           debug: false,
           loose: false,
           modules: false,
           targets: {
             esmodules: false,
-            node: 'current'
+            node: 'current',
           },
-          useBuiltIns: 'usage'
-        }
+          useBuiltIns: 'usage',
+        },
       ],
       '@babel/modules',
       [
@@ -119,10 +136,12 @@ module.exports = api => {
         {
           development: !isProduction,
           throwIfNamespace: true,
-          useSpread: false
-        }
+          useSpread: false,
+        },
       ],
-      ['@babel/preset-typescript'],
-    ]
+      [
+        '@babel/preset-typescript',
+      ],
+    ],
   };
 };
