@@ -124,6 +124,7 @@ module.exports = {
       {
         code: 80,
         tabWidth: 2,
+        ignoreComments: true,
         ignoreTrailingComments: true,
         ignoreUrls: true,
         ignoreTemplateLiterals: true,
@@ -133,6 +134,7 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 2 : 0,
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'no-dynamic-require': 0,
+    'no-implied-eval': off,
     'no-restricted-globals': 0,
     'no-underscore-dangle': [
       err,
@@ -187,7 +189,6 @@ module.exports = {
       },
     ],
     '@typescript-eslint/indent': off,
-    // '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
