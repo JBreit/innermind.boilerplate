@@ -1,7 +1,7 @@
 import { generateKeyPairSync } from 'node:crypto';
 import { mkdirSync, writeFileSync } from 'node:fs';
 
-const generateKeyPair = () => {
+const generateKeyPair = (): void => {
   const keyPair = generateKeyPairSync('rsa', {
     modulusLength: 4096,
     publicKeyEncoding: {
