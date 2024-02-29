@@ -1,7 +1,28 @@
 .*
 *.tgz
 
-docs
+src
+**/*.js.map
 test
+typings
+bundled
+build
+temp
+coverage
+docs
+wiki
+tsconfig.json
+typings.json
+CONTRIBUTING.md
+ISSUE_TEMPLATE.md
+PULL_REQUEST_TEMPLATE.md
+CODE_OF_CONDUCT.md
+tslint.json
+.auditignore
+.github
+.gitignore
+.vscode
+.publishrc
+type_definitions
 
 TODO.md
