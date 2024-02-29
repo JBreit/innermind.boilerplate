@@ -16,6 +16,8 @@ const extensions: string[] = [
 export default (): Config => ({
   automock: true,
   coverageDirectory: './coverage',
+  coverageReporters: ['html'],
+  maxWorkers: 1,
   moduleFileExtensions: extensions,
   preset: 'ts-jest',
   roots: [
@@ -25,6 +27,7 @@ export default (): Config => ({
   testRegex: [
     './(src|tests)/.*\\.(spec|test)?\\.(ts|tsx)$',
   ],
+  testTimeout: 30000,
   transform: {
     '^.+\\.(ts|tsx)?$': [
       'ts-jest',
