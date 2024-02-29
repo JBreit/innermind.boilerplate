@@ -12,7 +12,7 @@ const off = 'off';
 module.exports = {
   extends: [
     'airbnb',
-    'airbnb-typescript',
+    // 'airbnb-typescript',
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended-type-checked',
     'plugin:@typescript-eslint/stylistic-type-checked',
