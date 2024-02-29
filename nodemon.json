@@ -1,6 +1,11 @@
 {
-  "watch": ["./src"],
-  "ext": ".ts,.tsx,.js,.jsx",
-  "ignore": [],
-  "exec": "npx ts-node ./src/main.ts"
+  "watch": [
+    "src",
+    ".env.development"
+  ],
+  "ext": ".ts,.tsx,.js,.jsx,.json",
+  "ignore": [
+    "src/**/*.{spec,test}.ts"
+  ],
+  "exec": "npx ts-node -r tsconfig-paths/register --transpile-only ./src/main.ts"
 }
