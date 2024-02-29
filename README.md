@@ -4,12 +4,14 @@
 
 ## Overview
 
-ECMAScript 2022 syntax based web development project.
+ECMAScript 2023 syntax based web development project.
+
+## Features
 
 ## Dependencies
 
-- Node.js >=20.6.1
-- NPM >=10.2.1
+- Node.js >=21.1.0
+- NPM >=10.5.0
 
 Previous generated from cz-git .czrc
 
@@ -23,11 +25,11 @@ Previous generated from cz-git .czrc
 
 ## License
 
-Copyright (c) 2023 Jason Breitigan, released under MIT License
+Copyright (c) 2023-2024 Jason Breitigan, released under MIT License
 
 [npm]: https://img.shields.io/npm/v/npm
 [npm-url]: ![npm](https://img.shields.io/npm/v/npm)
-[node]: https://img.shields.io/badge/node-%3E%3D20.6.1-blue
+[node]: https://img.shields.io/badge/node-%3E%3D21.1.0-blue
 [node-url]: ![node](https://nodejs.org)
 [license-url]: LICENSE
 [license-image]: http://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
