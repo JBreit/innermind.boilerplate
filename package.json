@@ -1,7 +1,26 @@
 {
   "name": "innermind.boilerplate",
   "version": "1.0.0",
-  "description": "",
+  "description": "TypeScript Project Boilerplate",
+  "keywords": [
+    "airbnb",
+    "async",
+    "await",
+    "babel",
+    "boilerplate",
+    "commitlint",
+    "conventional-changelog",
+    "cross-env",
+    "eslint",
+    "husky",
+    "jest",
+    "lint-staged",
+    "markdownlint",
+    "node",
+    "nodemon",
+    "ts-node",
+    "typescript"
+  ],
   "engines": {
     "npm": ">=8.19.2",
     "node": ">=20.6.1"
