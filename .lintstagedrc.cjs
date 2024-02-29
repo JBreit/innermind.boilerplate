@@ -1,5 +1,5 @@
 module.exports = {
-  'src/**/*.{cjs,mjs,js,jsx,vue}': [
+  'src/**/*.{cjs, cts,mjs,mts,js,jsx,ts,tsx,vue}': [
     'npm run prettier:format',
     'npm run lint:fix',
   ],
@@ -13,7 +13,7 @@ module.exports = {
     'prettier --write',
   ],
   'package.json': [
-    'npx prettier --config .prettierrc ./package.json --write',
+    'npx prettier --config .prettierrc.cjs ./package.json --write',
     'npm run prettier:package',
   ],
 };
