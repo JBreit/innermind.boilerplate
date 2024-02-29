@@ -1,7 +1,19 @@
 module.exports = {
-  'src/**/*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,vue}': ['npm run lint:fix'],
-  // 'src/**/*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json,css,scss,vue}': [
-  //   'prettier --write',
-  // ],
-  '*.md': ['npm run mdlint:fix'],
+  'src/**/*.{cjs,mjs,js,jsx,vue}': [
+    'npm run prettier:format',
+    'npm run lint:fix',
+  ],
+  '*.md': [
+    'npm run mdlint:fix',
+  ],
+  '.editorconfig': [
+    'prettier --write',
+  ],
+  'LICENSE': [
+    'prettier --write',
+  ],
+  'package.json': [
+    'npx prettier --config .prettierrc ./package.json --write',
+    'npm run prettier:package',
+  ],
 };
