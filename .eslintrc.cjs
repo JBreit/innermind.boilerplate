@@ -2,6 +2,7 @@
 
 const { resolve } = require('node:path');
 
+const isProduction = process.env.NODE_ENV === 'production';
 const multiline = 'always-multiline';
 const always = 'always';
 const never = 'never';
@@ -24,6 +25,7 @@ module.exports = {
     serviceworker: true,
   },
   globals: {
+    async: true,
     describe: true,
     document: true,
     expect: true,
@@ -130,9 +132,9 @@ module.exports = {
         ignoreTemplateLiterals: true,
       },
     ],
-    'no-alert': process.env.NODE_ENV === 'production' ? 2 : 0,
-    'no-console': process.env.NODE_ENV === 'production' ? 2 : 0,
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+    'no-alert': isProduction ? 2 : 0,
+    'no-console': isProduction ? 2 : 0,
+    'no-debugger': isProduction ? 2 : 0,
     'no-dynamic-require': 0,
     'no-implied-eval': off,
     'no-restricted-globals': 0,
@@ -156,6 +158,12 @@ module.exports = {
       err,
       {
         args: 'none',
+      },
+    ],
+    'no-use-before-define': [
+      err,
+      {
+        functions: false,
       },
     ],
     'react/jsx-curly-spacing': [2, always],
