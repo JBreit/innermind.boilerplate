@@ -27,6 +27,16 @@ Previous generated from cz-git .czrc
 
 Copyright (c) 2023-2024 Jason Breitigan, released under MIT License
 
+### Resources
+
+1. TypeScript
+   + <https://typescriptlang.org>
+2. Prettier
+   + <https://prettier.io>
+3. ESLint
+   + <https://eslint.org>
+   + <https://typescript-eslint.io>
+
 [npm]: https://img.shields.io/npm/v/npm
 [npm-url]: ![npm](https://img.shields.io/npm/v/npm)
 [node]: https://img.shields.io/badge/node-%3E%3D21.1.0-blue
