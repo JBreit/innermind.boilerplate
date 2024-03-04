@@ -16,7 +16,7 @@ const off = 'off';
 module.exports = {
   extends: [
     'airbnb',
-    // 'airbnb-typescript',
+    'airbnb-typescript',
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended-type-checked',
     'plugin:@typescript-eslint/stylistic-type-checked',
@@ -56,7 +56,7 @@ module.exports = {
       jsx: true,
       modules: true,
     },
-    ecmaVersion: 2022,
+    ecmaVersion: 2023,
     emitDecoratorMetadata: true,
     project: [
       resolve(__dirname, 'tsconfig.eslint.json'),
@@ -203,7 +203,6 @@ module.exports = {
     ],
     'space-in-parens': [err, never],
     '@typescript-eslint/ban-types': off,
-
     '@typescript-eslint/ban-ts-ignore': off,
     '@typescript-eslint/ban-ts-comment': [
       err,
