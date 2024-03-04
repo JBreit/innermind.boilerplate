@@ -3,6 +3,10 @@
 const { resolve } = require('node:path');
 
 const isProduction = process.env.NODE_ENV === 'production';
+
+const src = resolve(`${process.cwd()}/src`);
+const npm = resolve(`${process.cwd()}/node_modules`);
+
 const multiline = 'always-multiline';
 const always = 'always';
 const never = 'never';
@@ -16,6 +20,9 @@ module.exports = {
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended-type-checked',
     'plugin:@typescript-eslint/stylistic-type-checked',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
     'plugin:jsx-a11y/recommended',
   ],
   env: {
@@ -59,6 +66,7 @@ module.exports = {
   },
   plugins: [
     '@typescript-eslint',
+    'import',
     'jsx-a11y',
   ],
   root: true,
@@ -155,9 +163,12 @@ module.exports = {
       },
     ],
     'no-unused-vars': [
-      err,
+      'error',
       {
-        args: 'none',
+        args: 'after-used',
+        argsIgnorePattern: '(^reject$|^_$)',
+        vars: 'all',
+        varsIgnorePattern: '(^_$|^h$)',
       },
     ],
     'no-use-before-define': [
@@ -182,7 +193,24 @@ module.exports = {
       },
     ],
     semi: [err, always],
+    'space-before-function-paren': [
+      err,
+      {
+        anonymous: always,
+        named: never,
+        asyncArrow: always
+      }
+    ],
+    'space-in-parens': [err, never],
     '@typescript-eslint/ban-types': off,
+
+    '@typescript-eslint/ban-ts-ignore': off,
+    '@typescript-eslint/ban-ts-comment': [
+      err,
+      {
+        'ts-ignore': false
+      }
+    ],
     '@typescript-eslint/comma-dangle': [
       err,
       {
@@ -212,10 +240,7 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
-        moduleDirectory: [
-          resolve(`${process.cwd()}/src`),
-          resolve(`${process.cwd()}/node_modules`),
-        ],
+        moduleDirectory: [src, npm],
       },
     },
   },

@@ -3,15 +3,19 @@ node_modules/*
 
 # Ignore some folders
 benchmark/*
+bin/*
 .config/*
 config/*
 coverage/*
 dist/*
+lib/*
 logs/*
 tools/*
 webpack/*
 
 # Ignore not supported files
+/.*
+.*
 !.*.js
 *.d.ts
 
