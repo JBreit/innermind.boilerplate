@@ -16,7 +16,9 @@ const extensions: string[] = [
 export default (): Config => ({
   automock: true,
   coverageDirectory: './coverage',
-  coverageReporters: ['html'],
+  coverageReporters: [
+    'html',
+  ],
   maxWorkers: 1,
   moduleFileExtensions: extensions,
   preset: 'ts-jest',
