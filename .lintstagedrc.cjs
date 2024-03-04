@@ -7,10 +7,10 @@ module.exports = {
     'npm run mdlint:fix',
   ],
   '.editorconfig': [
-    'prettier --write',
+    'npx prettier --write',
   ],
   'LICENSE': [
-    'prettier --write',
+    'npx prettier --write',
   ],
   'package.json': [
     'npx prettier --config .prettierrc.cjs ./package.json --write',
