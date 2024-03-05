@@ -123,6 +123,7 @@ module.exports = api => {
           debug: false,
           loose: false,
           modules: false,
+          shippedProposals: true,
           targets: {
             esmodules: false,
             node: 'current',
@@ -135,12 +136,19 @@ module.exports = api => {
         '@babel/react',
         {
           development: !isProduction,
+          runtime: 'automatic',
           throwIfNamespace: true,
           useSpread: false,
         },
       ],
       [
         '@babel/preset-typescript',
+          {
+            // will be the default in Babel 8, so let's just turn it on now
+            allowDeclareFields: true,
+            // will be default in the future, but we don't want to use it
+            allowNamespaces: false,
+          },
       ],
     ],
   };
