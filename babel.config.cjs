@@ -1,18 +1,18 @@
 module.exports = api => {
-  const isProduction = api.cache(() => process.env.NODE_ENV === 'production');
+  api.cache.using(() => process.env.NODE_ENV);
 
-  const extensions = [
-    'ts',
-    'tsx',
-    'js',
-    'jsx',
-    'json',
-    'cjs',
-    'cts',
-    'mjs',
-    'mts',
-    'node',
-  ];
+  // const extensions = [
+  //   'ts',
+  //   'tsx',
+  //   'js',
+  //   'jsx',
+  //   'json',
+  //   'cjs',
+  //   'cts',
+  //   'mjs',
+  //   'mts',
+  //   'node',
+  // ];
 
   const plugins = [
     [
@@ -44,6 +44,7 @@ module.exports = api => {
     '@babel/proposal-function-sent',
     '@babel/proposal-regexp-modifiers',
     '@babel/transform-unicode-property-regex',
+    '@babel/transform-unicode-sets-regex',
     '@babel/transform-class-static-block',
     '@babel/transform-class-properties',
     '@babel/transform-private-property-in-object',
@@ -51,10 +52,10 @@ module.exports = api => {
     '@babel/transform-object-rest-spread',
     '@babel/transform-export-namespace-from',
     '@babel/proposal-export-default-from',
-    '@babel/syntax-top-level-await',
+    // '@babel/syntax-top-level-await',
     '@babel/syntax-import-assertions',
-    '@babel/syntax-dynamic-import',
-    '@babel/syntax-import-meta',
+    // '@babel/syntax-dynamic-import',
+    // '@babel/syntax-import-meta',
     '@babel/proposal-partial-application',
     '@babel/transform-template-literals',
     [
@@ -65,22 +66,22 @@ module.exports = api => {
       },
     ],
     '@babel/transform-modules-commonjs',
-    [
-      'module-resolver',
-      {
-        root: [__dirname],
-        alias: {
-          '@root': '.',
-          '@config': './src/config',
-          '@container': './src/shared/container/container.js',
-          '@modules': './src/modules',
-          '@shared': './src/shared',
-          '@src': './src',
-        },
-        extensions,
-        projectRoot: '.',
-      },
-    ],
+    // [
+    //   'module-resolver',
+    //   {
+    //     root: [__dirname],
+    //     alias: {
+    //       '@root': '.',
+    //       '@config': './src/config',
+    //       '@container': './src/shared/container/container.js',
+    //       '@modules': './src/modules',
+    //       '@shared': './src/shared',
+    //       '@src': './src',
+    //     },
+    //     extensions,
+    //     projectRoot: '.',
+    //   },
+    // ],
   ];
 
   return {
@@ -135,7 +136,7 @@ module.exports = api => {
       [
         '@babel/react',
         {
-          development: !isProduction,
+          development: process.env.NODE_ENV === 'development',
           runtime: 'automatic',
           throwIfNamespace: true,
           useSpread: false,
@@ -143,12 +144,12 @@ module.exports = api => {
       ],
       [
         '@babel/preset-typescript',
-          {
-            // will be the default in Babel 8, so let's just turn it on now
-            allowDeclareFields: true,
-            // will be default in the future, but we don't want to use it
-            allowNamespaces: false,
-          },
+        {
+          // will be the default in Babel 8, so let's just turn it on now
+          allowDeclareFields: true,
+          // will be default in the future, but we don't want to use it
+          allowNamespaces: false,
+        },
       ],
     ],
   };
