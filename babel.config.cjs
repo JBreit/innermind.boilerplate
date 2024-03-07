@@ -1,19 +1,6 @@
 module.exports = api => {
   api.cache.using(() => process.env.NODE_ENV);
 
-  // const extensions = [
-  //   'ts',
-  //   'tsx',
-  //   'js',
-  //   'jsx',
-  //   'json',
-  //   'cjs',
-  //   'cts',
-  //   'mjs',
-  //   'mts',
-  //   'node',
-  // ];
-
   const plugins = [
     [
       '@babel/proposal-pipeline-operator',
@@ -25,63 +12,27 @@ module.exports = api => {
     [
       '@babel/proposal-decorators',
       {
-        version: '2023-05',
+        version: '2023-11',
       },
     ],
-    '@babel/proposal-duplicate-named-capturing-groups-regex',
+    ['@babel/proposal-duplicate-named-capturing-groups-regex'],
     [
       '@babel/proposal-record-and-tuple',
       {
         importPolyfill: true,
       },
     ],
-    '@babel/proposal-throw-expressions',
-    '@babel/proposal-async-do-expressions',
-    '@babel/proposal-destructuring-private',
-    '@babel/proposal-do-expressions',
-    '@babel/proposal-explicit-resource-management',
-    '@babel/proposal-function-bind',
-    '@babel/proposal-function-sent',
-    '@babel/proposal-regexp-modifiers',
-    '@babel/transform-unicode-property-regex',
-    '@babel/transform-unicode-sets-regex',
-    '@babel/transform-class-static-block',
-    '@babel/transform-class-properties',
-    '@babel/transform-private-property-in-object',
-    '@babel/transform-private-methods',
-    '@babel/transform-object-rest-spread',
-    '@babel/transform-export-namespace-from',
-    '@babel/proposal-export-default-from',
-    // '@babel/syntax-top-level-await',
-    '@babel/syntax-import-assertions',
-    // '@babel/syntax-dynamic-import',
-    // '@babel/syntax-import-meta',
-    '@babel/proposal-partial-application',
-    '@babel/transform-template-literals',
-    [
-      '@babel/transform-async-to-generator',
-      {
-        module: 'bluebird',
-        method: 'coroutine',
-      },
-    ],
-    '@babel/transform-modules-commonjs',
-    // [
-    //   'module-resolver',
-    //   {
-    //     root: [__dirname],
-    //     alias: {
-    //       '@root': '.',
-    //       '@config': './src/config',
-    //       '@container': './src/shared/container/container.js',
-    //       '@modules': './src/modules',
-    //       '@shared': './src/shared',
-    //       '@src': './src',
-    //     },
-    //     extensions,
-    //     projectRoot: '.',
-    //   },
-    // ],
+    ['@babel/proposal-throw-expressions'],
+    ['@babel/proposal-async-do-expressions'],
+    ['@babel/proposal-destructuring-private'],
+    ['@babel/proposal-do-expressions'],
+    ['@babel/proposal-explicit-resource-management'],
+    ['@babel/proposal-function-bind'],
+    ['@babel/proposal-function-sent'],
+    ['@babel/proposal-regexp-modifiers'],
+    ['@babel/proposal-export-default-from'],
+    // ['@babel/syntax-import-assertions'], // in @babel/preset-env?
+    ['@babel/proposal-partial-application'],
   ];
 
   return {
@@ -117,13 +68,16 @@ module.exports = api => {
       [
         '@babel/env',
         {
+          bugfixes: true,
           corejs: {
             version: '^3.32',
             proposals: true,
           },
           debug: false,
+          // forceAllTransforms: api.env('production'),
+          ignoreBrowserslistConfig: false,
           loose: false,
-          modules: false,
+          modules: 'auto', // "amd" | "umd" | "systemjs" | "commonjs" | "cjs" | "auto" | false, defaults to "auto"
           shippedProposals: true,
           targets: {
             esmodules: false,
@@ -132,11 +86,10 @@ module.exports = api => {
           useBuiltIns: 'usage',
         },
       ],
-      '@babel/modules',
       [
         '@babel/react',
         {
-          development: process.env.NODE_ENV === 'development',
+          development: api.env('development'),
           runtime: 'automatic',
           throwIfNamespace: true,
           useSpread: false,
@@ -145,10 +98,8 @@ module.exports = api => {
       [
         '@babel/preset-typescript',
         {
-          // will be the default in Babel 8, so let's just turn it on now
-          allowDeclareFields: true,
-          // will be default in the future, but we don't want to use it
-          allowNamespaces: false,
+          allowDeclareFields: true, // will be the default in Babel 8
+          allowNamespaces: false, // will be true by default in the future
         },
       ],
     ],
