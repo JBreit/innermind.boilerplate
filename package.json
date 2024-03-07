@@ -14,6 +14,8 @@
   },
   "main": "./src/main.ts",
   "scripts": {
+    "browserslist": "npx browserslist",
+    "browserslist:lint": "npx browserslist-lint",
     "build": "tsc",
     "build:babel": "npx babel --config-file ./babel.config.cjs --extensions \".ts\" ./src/main.ts -d ./dist",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
