@@ -16,19 +16,13 @@ const extensions: string[] = [
 export default (): Config => ({
   automock: true,
   coverageDirectory: './coverage',
-  coverageReporters: [
-    'html',
-  ],
+  coverageReporters: ['html'],
   maxWorkers: 1,
   moduleFileExtensions: extensions,
   preset: 'ts-jest',
-  roots: [
-    '<rootDir>/src',
-  ],
+  roots: ['<rootDir>/src'],
   testEnvironment: 'node',
-  testRegex: [
-    './(src|tests)/.*\\.(spec|test)?\\.(ts|tsx)$',
-  ],
+  testRegex: ['./(src|tests)/.*\\.(spec|test)?\\.(ts|tsx)$'],
   testTimeout: 30000,
   transform: {
     '^.+\\.(ts|tsx)?$': [
@@ -38,8 +32,6 @@ export default (): Config => ({
       },
     ],
   },
-  transformIgnorePatterns: [
-    '^/node_modules/$',
-  ],
+  transformIgnorePatterns: ['^/node_modules/$'],
   verbose: true,
 });
