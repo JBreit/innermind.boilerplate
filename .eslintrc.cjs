@@ -15,13 +15,14 @@ const off = 'off';
 
 module.exports = {
   extends: [
+    'eslint:recommended',
     'airbnb',
     'airbnb-typescript',
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended-type-checked',
     'plugin:@typescript-eslint/stylistic-type-checked',
-    'plugin:import/errors',
-    'plugin:import/warnings',
+    'prettier',
+    'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:jsx-a11y/recommended',
   ],
@@ -43,9 +44,11 @@ module.exports = {
   overrides: [
     {
       extends: [
-        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'plugin:@typescript-eslint/recommended-type-checked',
       ],
-      files: ['./**/*.{ts,tsx}'],
+      files: [
+        './**/*.{ts,tsx}',
+      ],
     },
   ],
   parser: '@typescript-eslint/parser',
@@ -56,7 +59,7 @@ module.exports = {
       jsx: true,
       modules: true,
     },
-    ecmaVersion: 2023,
+    ecmaVersion: 2024,
     emitDecoratorMetadata: true,
     project: [
       resolve(__dirname, 'tsconfig.eslint.json'),
@@ -66,12 +69,13 @@ module.exports = {
   },
   plugins: [
     '@typescript-eslint',
+    'prettier',
     'import',
     'jsx-a11y',
   ],
   root: true,
   rules: {
-    'arrow-body-style': [err, 'as-needed'],
+    // 'arrow-body-style': [err, 'as-needed'],
     'arrow-parens': [err, 'as-needed'],
     'comma-dangle': [
       err,
@@ -129,17 +133,17 @@ module.exports = {
       err,
       process.platform !== 'win32' ? 'linux' : 'windows'
     ],
-    'max-len': [
-      err,
-      {
-        code: 80,
-        tabWidth: 2,
-        ignoreComments: true,
-        ignoreTrailingComments: true,
-        ignoreUrls: true,
-        ignoreTemplateLiterals: true,
-      },
-    ],
+    // 'max-len': [
+    //   err,
+    //   {
+    //     code: 80,
+    //     tabWidth: 2,
+    //     ignoreComments: true,
+    //     ignoreTrailingComments: true,
+    //     ignoreUrls: true,
+    //     ignoreTemplateLiterals: true,
+    //   },
+    // ],
     'no-alert': isProduction ? 2 : 0,
     'no-console': isProduction ? 2 : 0,
     'no-debugger': isProduction ? 2 : 0,
@@ -177,6 +181,7 @@ module.exports = {
         functions: false,
       },
     ],
+    'prettier/prettier': 2,
     'react/jsx-curly-spacing': [2, always],
     'react/prefer-stateless-function': [0],
     'react/jsx-filename-extension': [
@@ -234,13 +239,14 @@ module.exports = {
       },
     ],
     '@typescript-eslint/prefer-nullish-coalescing': off,
-    quotes: [2, 'single'],
+    // quotes: [2, 'single'],
   },
   settings: {
     'import/resolver': {
       node: {
         moduleDirectory: [src, npm],
       },
+      typescript: true,
     },
   },
 };
