@@ -1,40 +1,6 @@
 module.exports = api => {
   api.cache.using(() => process.env.NODE_ENV);
 
-  const plugins = [
-    [
-      '@babel/proposal-pipeline-operator',
-      {
-        proposal: 'hack',
-        topicToken: '^^',
-      },
-    ],
-    [
-      '@babel/proposal-decorators',
-      {
-        version: '2023-11',
-      },
-    ],
-    ['@babel/proposal-duplicate-named-capturing-groups-regex'],
-    [
-      '@babel/proposal-record-and-tuple',
-      {
-        importPolyfill: true,
-      },
-    ],
-    ['@babel/proposal-throw-expressions'],
-    ['@babel/proposal-async-do-expressions'],
-    ['@babel/proposal-destructuring-private'],
-    ['@babel/proposal-do-expressions'],
-    ['@babel/proposal-explicit-resource-management'],
-    ['@babel/proposal-function-bind'],
-    ['@babel/proposal-function-sent'],
-    ['@babel/proposal-regexp-modifiers'],
-    ['@babel/proposal-export-default-from'],
-    // ['@babel/syntax-import-assertions'], // in @babel/preset-env?
-    ['@babel/proposal-partial-application'],
-  ];
-
   return {
     assumptions: {
       constantReexports: true,
@@ -63,7 +29,39 @@ module.exports = api => {
         ],
       },
     },
-    plugins,
+    plugins: [
+      [
+        '@babel/proposal-pipeline-operator',
+        {
+          proposal: 'hack',
+          topicToken: '^^',
+        },
+      ],
+      [
+        '@babel/proposal-decorators',
+        {
+          version: '2023-11',
+        },
+      ],
+      ['@babel/proposal-duplicate-named-capturing-groups-regex'],
+      [
+        '@babel/proposal-record-and-tuple',
+        {
+          importPolyfill: true,
+        },
+      ],
+      ['@babel/proposal-throw-expressions'],
+      ['@babel/proposal-async-do-expressions'],
+      ['@babel/proposal-destructuring-private'],
+      ['@babel/proposal-do-expressions'],
+      ['@babel/proposal-explicit-resource-management'],
+      ['@babel/proposal-function-bind'],
+      ['@babel/proposal-function-sent'],
+      ['@babel/proposal-regexp-modifiers'],
+      ['@babel/proposal-export-default-from'],
+      // ['@babel/syntax-import-assertions'], // in @babel/preset-env?
+      ['@babel/proposal-partial-application'],
+    ],
     presets: [
       [
         '@babel/env',
@@ -100,6 +98,7 @@ module.exports = api => {
         {
           allowDeclareFields: true, // will be the default in Babel 8
           allowNamespaces: false, // will be true by default in the future
+          rewriteImportExtensions: true,
         },
       ],
     ],
