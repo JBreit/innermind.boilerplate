@@ -24,7 +24,8 @@ tslint.json
 .github
 .gitignore
 .husky
-.markdownlint.json.npmrc
+.markdownlint.json
+.npmrc
 .vscode
 .publishrc
 
