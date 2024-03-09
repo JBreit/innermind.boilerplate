@@ -125,6 +125,7 @@
   "exclude": [
     "dist",
     "jest.config.ts",
+    "tools/cz.adapter.cjs",
     "node_modules",
     "!node_modules/@types",
     "scripts",
