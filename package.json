@@ -13,6 +13,11 @@
     "url": "https://github.com/JBreit/innermind.boilerplate/issues"
   },
   "main": "./src/main.ts",
+  "directories": {
+    "doc": "docs",
+    "test": "tests",
+    "tools": "tools"
+  },
   "scripts": {
     "browserslist": "npx browserslist",
     "browserslist:lint": "npx browserslist-lint",
@@ -42,7 +47,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "@commitlint/cz-commitlint"
+      "path": "./tools/cz.adapter.cjs"
     }
   },
   "peerDependencies": {
@@ -102,7 +107,7 @@
     "conventional-changelog": "^5.1.0",
     "conventional-changelog-cli": "^4.1.0",
     "cross-env": "^7.0.3",
-    "cz-git": "^1.8.0",
+    "cz-git": "^1.9.0",
     "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
