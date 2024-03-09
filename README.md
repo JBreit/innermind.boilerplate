@@ -29,13 +29,23 @@ Copyright (c) 2023-2024 Jason Breitigan, released under MIT License
 
 ### Resources
 
-1. TypeScript
+1. Node.js
+   + <https://nodejs.org>
+2. TypeScript
    + <https://typescriptlang.org>
-2. Prettier
+3. Prettier
    + <https://prettier.io>
-3. ESLint
+4. ESLint
    + <https://eslint.org>
    + <https://typescript-eslint.io>
+5. Husky
+   + <https://typicode.github.io/husky/>
+6. Lint Staged
+   + <https://github.com/lint-staged/lint-staged>
+7. Commit Lint
+   + <https://commitlint.js.org/>
+8. Markdown Lint
+   + <https://github.com/markdownlint/markdownlint>
 
 [npm]: https://img.shields.io/npm/v/npm
 [npm-url]: ![npm](https://img.shields.io/npm/v/npm)
