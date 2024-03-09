@@ -39,6 +39,8 @@ karma.conf.ts
 
 .env
 
+cz.adapter.cjs
+
 # Ignore precompiled schemas
 schemas/**/*.check.js
 
