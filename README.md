@@ -1,6 +1,8 @@
 # innermind.boilerplate
 
 [![node][node]][node-url][![npm][npm]][npm-url][![MIT License][license-image]][license-url]
+[![Commitizen Adapter](https://img.shields.io/badge/Commitizen-Adapter-red.svg?logo=git&style=flat)]("https://github.com/commitizen/cz-cli#adapters)
+[![Commitizen CLI](https://img.shields.io/badge/Commitizen-CLI-red.svg?logo=git&style=flat)](https://cz-git.qbb.sh/cli/)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 ## Overview
