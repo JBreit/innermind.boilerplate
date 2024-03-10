@@ -25,7 +25,7 @@
     "build:babel": "npx babel --config-file ./babel.config.cjs --extensions \".ts\" ./src/main.ts -d ./dist",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "clean": "rimraf ./dist",
-    "commit": "git-cz",
+    "commit": "cz",
     "kill": "taskkill /F /IM node.exe",
     "lint": "npx eslint --ignore-path .eslintignore . --cache --max-warnings=0 --ext .ts,.tsx",
     "lint:fix": "npx eslint --ignore-path .eslintignore . --cache --max-warnings=0 --ext .ts,.tsx --fix",
