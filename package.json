@@ -47,7 +47,8 @@
   },
   "config": {
     "commitizen": {
-      "path": "./tools/cz.adapter.cjs"
+      "path": "./tools/cz.adapter.cjs",
+      "useEmoji": true
     }
   },
   "peerDependencies": {
@@ -156,6 +157,7 @@
     "commitlint",
     "conventional-changelog",
     "cross-env",
+    "cz-git",
     "dotenv",
     "editorconfig",
     "eslint",
