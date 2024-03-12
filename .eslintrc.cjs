@@ -10,8 +10,10 @@ const npm = resolve(`${process.cwd()}/node_modules`);
 const multiline = 'always-multiline';
 const always = 'always';
 const never = 'never';
-const err = 'error';
-const off = 'off';
+
+const OFF = 0;
+const WARNING = 1;
+const ERROR = 2;
 
 module.exports = {
   extends: [
@@ -75,10 +77,10 @@ module.exports = {
   ],
   root: true,
   rules: {
-    // 'arrow-body-style': [err, 'as-needed'],
-    'arrow-parens': [err, 'as-needed'],
+    // 'arrow-body-style': [ERROR, 'as-needed'],
+    'arrow-parens': [ERROR, 'as-needed'],
     'comma-dangle': [
-      err,
+      ERROR,
       {
         arrays: multiline,
         objects: multiline,
@@ -88,16 +90,16 @@ module.exports = {
       },
     ],
     'comma-spacing': [
-      err,
+      ERROR,
       {
         before: false,
         after: true,
       },
     ],
-    eqeqeq: 2,
-    'implicit-arrow-linebreak': [err, 'beside'],
+    eqeqeq: ERROR,
+    'implicit-arrow-linebreak': [ERROR, 'beside'],
     'import/extensions': [
-      err,
+      ERROR,
       {
         ignorePackages: true,
         cjs: never,
@@ -108,10 +110,10 @@ module.exports = {
         tsx: never,
       },
     ],
-    'import/no-named-as-default': 0,
-    'import/no-unresolved': 0,
+    'import/no-named-as-default': OFF,
+    'import/no-unresolved': OFF,
     'import/no-extraneous-dependencies': [
-      err,
+      ERROR,
       {
         // devDependencies: false,
         // optionalDependencies: false,
@@ -120,21 +122,21 @@ module.exports = {
         // packageDir: './'
       },
     ],
-    'import/prefer-default-export': 0,
+    'import/prefer-default-export': OFF,
     indent: [
-      err,
+      ERROR,
       2,
       {
-        SwitchCase: 1,
+        SwitchCase: WARNING,
       },
     ],
-    'jsx-quotes': [2, 'prefer-single'],
+    'jsx-quotes': [ERROR, 'prefer-single'],
     'linebreak-style': [
-      err,
+      ERROR,
       process.platform !== 'win32' ? 'linux' : 'windows'
     ],
     // 'max-len': [
-    //   err,
+    //   ERROR,
     //   {
     //     code: 80,
     //     tabWidth: 2,
@@ -144,14 +146,14 @@ module.exports = {
     //     ignoreTemplateLiterals: true,
     //   },
     // ],
-    'no-alert': isProduction ? 2 : 0,
-    'no-console': isProduction ? 2 : 0,
-    'no-debugger': isProduction ? 2 : 0,
-    'no-dynamic-require': 0,
-    'no-implied-eval': off,
-    'no-restricted-globals': 0,
+    'no-alert': isProduction ? ERROR : OFF,
+    'no-console': isProduction ? ERROR : OFF,
+    'no-debugger': isProduction ? ERROR : OFF,
+    'no-dynamic-require': OFF,
+    'no-implied-eval': OFF,
+    'no-restricted-globals': OFF,
     'no-underscore-dangle': [
-      err,
+      ERROR,
       {
         allow: [
           '__WB_MANIFEST',
@@ -159,7 +161,7 @@ module.exports = {
       },
     ],
     'no-unused-expressions': [
-      err,
+      ERROR,
       {
         allowShortCircuit: true,
         allowTernary: true,
@@ -167,7 +169,7 @@ module.exports = {
       },
     ],
     'no-unused-vars': [
-      'error',
+      ERROR,
       {
         args: 'after-used',
         argsIgnorePattern: '(^reject$|^_$)',
@@ -176,16 +178,16 @@ module.exports = {
       },
     ],
     'no-use-before-define': [
-      err,
+      ERROR,
       {
         functions: false,
       },
     ],
-    'prettier/prettier': 2,
-    'react/jsx-curly-spacing': [2, always],
-    'react/prefer-stateless-function': [0],
+    'prettier/prettier': ERROR,
+    'react/jsx-curly-spacing': [ERROR, always],
+    'react/prefer-stateless-function': [OFF],
     'react/jsx-filename-extension': [
-      err,
+      ERROR,
       {
         extensions: [
           '.cjs',
@@ -197,26 +199,26 @@ module.exports = {
         ],
       },
     ],
-    semi: [err, always],
+    semi: [ERROR, always],
     'space-before-function-paren': [
-      err,
+      ERROR,
       {
         anonymous: always,
         named: never,
         asyncArrow: always
       }
     ],
-    'space-in-parens': [err, never],
-    '@typescript-eslint/ban-types': off,
-    '@typescript-eslint/ban-ts-ignore': off,
+    'space-in-parens': [ERROR, never],
+    '@typescript-eslint/ban-types': OFF,
+    '@typescript-eslint/ban-ts-ignore': OFF,
     '@typescript-eslint/ban-ts-comment': [
-      err,
+      ERROR,
       {
         'ts-ignore': false
       }
     ],
     '@typescript-eslint/comma-dangle': [
-      err,
+      ERROR,
       {
         arrays: multiline,
         generics: always,
@@ -228,9 +230,9 @@ module.exports = {
         tuples: always,
       },
     ],
-    '@typescript-eslint/indent': off,
+    '@typescript-eslint/indent': OFF,
     '@typescript-eslint/no-unused-vars': [
-      'error',
+      ERROR,
       {
         args: 'after-used',
         argsIgnorePattern: '(^reject$|^_$)',
@@ -238,8 +240,8 @@ module.exports = {
         varsIgnorePattern: '(^_$|^h$)',
       },
     ],
-    '@typescript-eslint/prefer-nullish-coalescing': off,
-    // quotes: [2, 'single'],
+    '@typescript-eslint/prefer-nullish-coalescing': OFF,
+    // quotes: [ERROR, 'single'],
   },
   settings: {
     'import/resolver': {
