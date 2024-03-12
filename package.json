@@ -31,7 +31,7 @@
     "lint:fix": "npx eslint --ignore-path .eslintignore . --cache --max-warnings=0 --ext .ts,.tsx --fix",
     "mdlint": "npx markdownlint .",
     "mdlint:fix": "npx markdownlint . --fix",
-    "prepare": "npx husky init",
+    "prepare": "npx husky",
     "prettier:format": "npx prettier --config .prettierrc.cjs ./src/**/*.ts --write",
     "prettier:package": "npx prettier-package-json --write",
     "prettier:watch": "npx onchange ./src/**/*.ts -- prettier --write {{changed}}",
