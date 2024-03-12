@@ -1,11 +1,9 @@
 # innermind.boilerplate
 
-[![node][node]][node-url]
-[![npm][npm]][npm-url]
-[![MIT License][license-image]][license-url]
-[![Commitizen Adapter](https://img.shields.io/badge/Commitizen-Adapter-red.svg?logo=git&style=flat)]("https://github.com/commitizen/cz-cli#adapters)
-[![Commitizen CLI](https://img.shields.io/badge/Commitizen-CLI-red.svg?logo=git&style=flat)](https://cz-git.qbb.sh/cli/)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![NodeJS][node]][node-url]
+[![NPM][npm]][npm-url]
+[![MIT License][license]][license-url]
+[![Commitizen friendly][commitizen]][commitizen-url]
 
 ## Overview
 
@@ -18,13 +16,28 @@ ECMAScript 2023 syntax based web development project.
 - Node.js >=21.1.0
 - NPM >=10.5.0
 
-Previous generated from cz-git .czrc
+###### package.json
 
 ```json
-
 {
-  "path": "cz-git",
-  "$schema": "https://cdn.jsdelivr.net/gh/Zhengqbbb/cz-git@1.7.1/docs/public/schema/cz-git.json"
+  // ...
+  "config": {
+    "commitizen": {
+      "path": "./tools/cz.adapter.cjs",
+      "useEmoji": true
+    }
+  }
+  // ...
+}
+```
+
+###### tools/cz.adapter.cjs
+
+```js
+exports.prompter = async (instance, commit) => {
+  const { prompter } = await import('@commitlint/cz-commitlint');
+
+  prompter(instance, commit);
 }
 ```
 
@@ -53,8 +66,10 @@ Copyright (c) 2023-2024 Jason Breitigan, released under MIT License
    + <https://github.com/markdownlint/markdownlint>
 
 [npm]: https://img.shields.io/npm/v/npm
-[npm-url]: ![npm](https://img.shields.io/npm/v/npm)
+[npm-url]: https://www.npmjs.com/
 [node]: https://img.shields.io/badge/node-%3E%3D21.1.0-blue
-[node-url]: ![node](https://nodejs.org)
+[node-url]: https://nodejs.org
 [license-url]: LICENSE
-[license-image]: http://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
+[license]: http://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
+[commitizen-url]: http://commitizen.github.io/cz-cli/
+[commitizen]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
