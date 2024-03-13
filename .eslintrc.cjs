@@ -96,7 +96,7 @@ module.exports = {
         after: true,
       },
     ],
-    eqeqeq: ERROR,
+    eqeqeq: always,
     'implicit-arrow-linebreak': [ERROR, 'beside'],
     'import/extensions': [
       ERROR,
