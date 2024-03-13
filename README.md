@@ -16,6 +16,8 @@ ECMAScript 2024 web development boilerplate.
 - Node.js >=21.1.0
 - NPM >=10.5.0
 
+#### Commitizen
+
 ###### package.json
 
 ```json
@@ -51,19 +53,34 @@ Copyright (c) 2023-2024 Jason Breitigan, released under MIT License
    + <https://nodejs.org>
 2. TypeScript
    + <https://typescriptlang.org>
-3. Prettier
+   + <https://github.com/microsoft/typescript>
+3. Babel
+   + <https://babeljs.io/>
+   + <https://github.com/babel/babel>
+4. Prettier
    + <https://prettier.io>
-4. ESLint
+   + <https://github.com/prettier/prettier>
+5. ESLint
    + <https://eslint.org>
+   + <https://github.com/eslint/eslint>
    + <https://typescript-eslint.io>
-5. Husky
+   + <https://github.com/typescript-eslint/typescript-eslint>
+6. Husky
    + <https://typicode.github.io/husky/>
-6. Lint Staged
+   + <https://github.com/typicode/husky>
+7. Lint Staged
    + <https://github.com/lint-staged/lint-staged>
-7. Commit Lint
+8. Commit Lint
    + <https://commitlint.js.org/>
-8. Markdown Lint
+   + <https://github.com/conventional-changelog/commitlint>
+9. Markdown Lint
    + <https://github.com/markdownlint/markdownlint>
+10. Jest
+    + <https://jestjs.io/>
+    + <https://github.com/jestjs/jest>
+11. Browserslist
+    + <https://browsersl.ist/>
+    + <https://github.com/browserslist/browserslist>
 
 [npm]: https://img.shields.io/npm/v/npm
 [npm-url]: https://www.npmjs.com/
