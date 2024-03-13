@@ -81,6 +81,9 @@ Copyright (c) 2023-2024 Jason Breitigan, released under MIT License
 11. Browserslist
     + <https://browsersl.ist/>
     + <https://github.com/browserslist/browserslist>
+12. Nodemon
+    + <https://nodemon.io/>
+    + <https://github.com/remy/nodemon>
 
 [npm]: https://img.shields.io/npm/v/npm
 [npm-url]: https://www.npmjs.com/
